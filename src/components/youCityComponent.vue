@@ -2,13 +2,14 @@
   <div>
     <section>
       <div>
-        <input v-model="nombreCiudad" type="text" placeholder="Buscar Ciudad" />
+        <input type="text" placeholder="Buscar Ciudad" v-model="busqueda" />
         <img src="" alt="buscar" />
       </div>
-      <button v-on="URL(nombreCiudad)">Buscar</button>
+      <button v-on:click.prevent="buscar">Buscar</button>
     </section>
     <h1>{{ infoClima.name }} / {{ infoClima.country }}</h1>
     <section>
+      <h1>{{ busqueda }}/ {{ nombreCiudad }}</h1>
       <section>
         <img src="" alt="icon" />
         <h2>{{ infoClima.description }}</h2>
@@ -28,6 +29,16 @@
         <img src="" alt="icon" />
         <h2>Temperatura minima: {{ infoClima.temp_min }}Cº</h2>
       </section>
+
+      <section>
+        <img src="" alt="icon" />
+        <h2>Viento: {{ infoClima.viento }} km/h</h2>
+      </section>
+
+      <section>
+        <img src="" alt="icon" />
+        <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
+      </section>
     </section>
   </div>
 </template>
@@ -36,26 +47,36 @@ import { ref } from "vue";
 import axios from "axios";
 export default {
   setup() {
+    //variable que almacena el nombre  de ciudad
     let nombreCiudad = ref("");
-
+    let busqueda = ref("");
+    //arreglo con datos de la api
     const infoClima = ref({});
 
+    function buscar() {
+      nombreCiudad.value = busqueda.value;
+      return URL(nombreCiudad.value);
+    }
     URL(nombreCiudad.value);
+    //funcion para obtener la informacion de la api
     function URL(data) {
-      let ciudad = data === "" ? "Guatemala" : data;
+      let ciudad = data === "" ? "Santa Cruz del Quiché" : data;
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=235cfdfa708afcdf68cf0dffcfb036d6&lang=es&units=metric`
         )
         .then((response) => {
           console.log(response.data);
+          //se agregan los datos al arreglo infoClima
           infoClima.value = {
-            name: response.data.name,
             country: response.data.sys.country,
+            name: response.data.name,
             description: response.data.weather[0].description,
             temp: response.data.main.temp,
             temp_max: response.data.main.temp_max,
             temp_min: response.data.main.temp_min,
+            viento: response.data.wind.speed,
+            rafaga: response.data.wind.gust,
             icon: response.data.weather[0].icon,
           };
         })
@@ -66,35 +87,10 @@ export default {
     return {
       nombreCiudad,
       URL,
+      busqueda,
       infoClima,
+      buscar,
     };
   },
 };
-/*
-
-    const location = navigator.geolocation;
-    function geolocation(pos) {
-      let latiude = ref(pos.coords.latitude);
-      let longitude = ref(pos.coords.longitude);
-      //  console.log(latiude.value);
-      //console.log(longitude.value);
-      return {
-        latiude,
-        longitude,
-      };
-    }
-    location.getCurrentPosition(geolocation);
-
-    function getWeather() {
-      axios(
-        "https://api.openweathermap.org/data/2.5/weather?lat=15.0236312&lon=-91.1496969&appid=235cfdfa708afcdf68cf0dffcfb036d6"
-      )
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-*/
 </script>
