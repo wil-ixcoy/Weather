@@ -1,16 +1,16 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <your-city></your-city>
+    <clima-actual></clima-actual>
   </div>
 </template>
 
 <script>
-import yourCity from "../components/youCityComponent.vue";
+import climaActual from "../components/climaActual.vue";
 export default {
   name: "Home",
   components: {
-    yourCity,
+    climaActual,
   },
 };
 </script>

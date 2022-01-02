@@ -39,12 +39,14 @@
         <img src="" alt="icon" />
         <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
       </section>
+      <pronostico msg="Santa Cruz del Quiché"></pronostico>
     </section>
   </div>
 </template>
 <script>
 import { ref } from "vue";
 import axios from "axios";
+import pronostico from "./pronostico.vue";
 export default {
   setup() {
     //variable que almacena el nombre  de ciudad
@@ -79,11 +81,13 @@ export default {
             rafaga: response.data.wind.gust,
             icon: response.data.weather[0].icon,
           };
+          console.log(infoClima.value);
         })
         .catch((error) => {
           console.log(error);
         });
     }
+
     return {
       nombreCiudad,
       URL,
@@ -91,6 +95,10 @@ export default {
       infoClima,
       buscar,
     };
+  },
+
+  components: {
+    pronostico,
   },
 };
 </script>
