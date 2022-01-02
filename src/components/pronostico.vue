@@ -15,42 +15,57 @@
 
 <script>
 import axios from "axios";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 export default {
   props: ["msg"],
   setup(props) {
     let datos = ref([]);
     let filtroDatos = ref([]);
     console.log(props);
-    pronosticoSemana(props.msg);
+
+    watch(
+      () => props.msg,
+      (oldValue, newValue) => {
+        console.log(oldValue, newValue);
+        pronosticoSemana(oldValue);
+      }
+    );
+
     function pronosticoSemana(data) {
+      filtroDatos.value.shift(0);
+      filtroDatos.value.shift(1);
+      filtroDatos.value.shift(2);
+      filtroDatos.value.shift(3);
+      filtroDatos.value.shift(4);
       let ciudad = data === "" ? "Santa Cruz del Quiché" : data;
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&appid=235cfdfa708afcdf68cf0dffcfb036d6&lang=es&units=metric`
-        )
-        .then((response) => {
-          datos.value = response.data;
-          for (let i = 0; i < datos.value.list.length; i++) {
-            if (datos.value.list[i].dt_txt.includes("18:00:00")) {
-              filtroDatos.value.push({
-                clima: datos.value.list[i].weather[0].description,
-                dia: datos.value.list[i].dt_txt.substring(0, 10),
-                hora: datos.value.list[i].dt_txt.substring(11, 16),
-                temp: datos.value.list[i].main.temp,
-                temp_max: datos.value.list[i].main.temp_max,
-                temp_min: datos.value.list[i].main.temp_min,
-                viento: datos.value.list[i].wind.speed,
-                rafaga: datos.value.list[i].wind.gust,
-                icon: datos.value.list[i].weather[0].icon,
-              });
-              console.log(filtroDatos.value);
+      setTimeout(() => {
+        axios
+          .get(
+            `https://api.openweathermap.org/data/2.5/forecast?q=${ciudad}&appid=235cfdfa708afcdf68cf0dffcfb036d6&lang=es&units=metric`
+          )
+          .then((response) => {
+            datos.value = response.data;
+            for (let i = 0; i < datos.value.list.length; i++) {
+              if (datos.value.list[i].dt_txt.includes("18:00:00")) {
+                filtroDatos.value.push({
+                  clima: datos.value.list[i].weather[0].description,
+                  dia: datos.value.list[i].dt_txt.substring(0, 10),
+                  hora: datos.value.list[i].dt_txt.substring(11, 16),
+                  temp: datos.value.list[i].main.temp,
+                  temp_max: datos.value.list[i].main.temp_max,
+                  temp_min: datos.value.list[i].main.temp_min,
+                  viento: datos.value.list[i].wind.speed,
+                  rafaga: datos.value.list[i].wind.gust,
+                  icon: datos.value.list[i].weather[0].icon,
+                });
+              }
             }
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+          })
+
+          .catch((error) => {
+            console.log(error);
+          });
+      }, 6000);
     }
 
     return {

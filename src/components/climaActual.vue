@@ -39,7 +39,7 @@
         <img src="" alt="icon" />
         <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
       </section>
-      <pronostico msg="Santa Cruz del Quiché"></pronostico>
+      <pronostico v-bind:msg="nombreCiudad"></pronostico>
     </section>
   </div>
 </template>
