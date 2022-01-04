@@ -11,7 +11,7 @@
     <section>
       <h1>{{ busqueda }}/ {{ nombreCiudad }}</h1>
       <section>
-        <img src="" alt="icon" />
+        <img :src="infoClima.icon" alt="icon" />
         <h2>{{ infoClima.description }}</h2>
       </section>
 
@@ -79,7 +79,7 @@ export default {
             temp_min: response.data.main.temp_min,
             viento: response.data.wind.speed,
             rafaga: response.data.wind.gust,
-            icon: response.data.weather[0].icon,
+            icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
           };
           console.log(infoClima.value);
         })
