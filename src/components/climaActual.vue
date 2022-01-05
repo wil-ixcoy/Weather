@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section>
+    <section class="">
       <div>
         <input type="text" placeholder="Buscar Ciudad" v-model="busqueda" />
         <img src="" alt="buscar" />
@@ -8,39 +8,56 @@
       <button v-on:click.prevent="buscar">Buscar</button>
     </section>
     <h1>{{ infoClima.name }} / {{ infoClima.country }}</h1>
-    <section>
-      <h1>{{ busqueda }}/ {{ nombreCiudad }}</h1>
-      <section>
-        <img :src="infoClima.icon" alt="icon" />
-        <h2>{{ infoClima.description }}</h2>
-      </section>
+    <section class="W-container">
+      <article class="W-subContainer">
+        <section class="W-item">
+          <img :src="infoClima.icon" alt="icon" class="W-image" />
+          <h2>Clima: {{ infoClima.description }}</h2>
+        </section>
+      </article>
 
-      <section>
-        <img src="../assets/temp_actual.svg" alt="temperatura-actual" />
-        <h2>Temperatura: {{ infoClima.temp }}Cº</h2>
-      </section>
+      <article class="W-subContainer">
+        <section class="W-item">
+          <img
+            src="../assets/temp_actual.svg"
+            alt="temperatura-actual"
+            class="W-image"
+          />
+          <h2>Temperatura: {{ infoClima.temp }}Cº</h2>
+        </section>
 
-      <section>
-        <img src="../assets/temp_max.svg" alt="temperatura-max" />
-        <h2>Temperatura maxima: {{ infoClima.temp_max }}Cº</h2>
-      </section>
+        <section class="W-item">
+          <img
+            src="../assets/temp_max.svg"
+            alt="temperatura-max"
+            class="W-image"
+          />
+          <h2>Temperatura maxima: {{ infoClima.temp_max }}Cº</h2>
+        </section>
 
-      <section>
-        <img src="../assets/temp_min.svg" alt="temperatura-minima" />
-        <h2>Temperatura minima: {{ infoClima.temp_min }}Cº</h2>
-      </section>
+        <section class="W-item">
+          <img
+            src="../assets/temp_min.svg"
+            alt="temperatura-minima"
+            class="W-image"
+          />
+          <h2>Temperatura minima: {{ infoClima.temp_min }}Cº</h2>
+        </section>
+      </article>
 
-      <section>
-        <img src="../assets/wind.svg" alt="viento" />
-        <h2>Viento: {{ infoClima.viento }} km/h</h2>
-      </section>
+      <article class="W-subContainer">
+        <section class="W-item">
+          <img src="../assets/wind.svg" alt="viento" class="W-image" />
+          <h2>Viento: {{ infoClima.viento }} km/h</h2>
+        </section>
 
-      <section>
-        <img src="../assets/wind.svg" alt="rafaga" />
-        <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
-      </section>
-      <pronostico v-bind:msg="nombreCiudad"></pronostico>
+        <section class="W-item">
+          <img src="../assets/wind.svg" alt="rafaga" class="W-image" />
+          <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
+        </section>
+      </article>
     </section>
+    <pronostico v-bind:msg="nombreCiudad"></pronostico>
   </div>
 </template>
 <script>

@@ -1,0 +1,32 @@
+/*Variables para distintos tamaños*/
+$pc-1024: 70px;
+$pc-768: 50px;
+$pc-600: 30px;
+$pc-480: 20px;
+$pc-320: 10px;
+$pc-240: 5px;
+$texto:'Galdeano', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+
+h1 {
+    width: auto;
+    height: 82px;
+    left: 493px;
+    top: 277px;
+
+    font-family: $texto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 82px;
+
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    font-family: $texto;
+    text-align: center;
+    color: #ffffff;
+}
