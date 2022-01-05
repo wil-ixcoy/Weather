@@ -16,27 +16,27 @@
       </section>
 
       <section>
-        <img src="" alt="icon" />
+        <img src="../assets/temp_actual.svg" alt="temperatura-actual" />
         <h2>Temperatura: {{ infoClima.temp }}Cº</h2>
       </section>
 
       <section>
-        <img src="" alt="icon" />
+        <img src="../assets/temp_max.svg" alt="temperatura-max" />
         <h2>Temperatura maxima: {{ infoClima.temp_max }}Cº</h2>
       </section>
 
       <section>
-        <img src="" alt="icon" />
+        <img src="../assets/temp_min.svg" alt="temperatura-minima" />
         <h2>Temperatura minima: {{ infoClima.temp_min }}Cº</h2>
       </section>
 
       <section>
-        <img src="" alt="icon" />
+        <img src="../assets/wind.svg" alt="viento" />
         <h2>Viento: {{ infoClima.viento }} km/h</h2>
       </section>
 
       <section>
-        <img src="" alt="icon" />
+        <img src="../assets/wind.svg" alt="rafaga" />
         <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
       </section>
       <pronostico v-bind:msg="nombreCiudad"></pronostico>
