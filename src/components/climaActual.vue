@@ -1,11 +1,15 @@
 <template>
   <div>
     <section class="">
-      <div>
+      <div class="W-input">
         <input type="text" placeholder="Buscar Ciudad" v-model="busqueda" />
-        <img src="" alt="buscar" />
+        <img
+          src="../assets/busqueda.svg"
+          alt="buscar"
+          class="W-input_img"
+          v-on:click.prevent="buscar"
+        />
       </div>
-      <button v-on:click.prevent="buscar">Buscar</button>
     </section>
     <h1>{{ infoClima.name }} / {{ infoClima.country }}</h1>
     <section class="W-container">
