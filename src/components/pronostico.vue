@@ -1,15 +1,42 @@
 <template>
   <div>
-    <h1>Clima en los proximos dias en:</h1>
-    <section v-for="(dia, index) in filtroDatos" :key="dia[index]">
-      <h1>{{ dia.dia }}</h1>
-      <img :src="dia.icon" alt="icno" />
-      <p>Clima: {{ dia.clima }}</p>
-      <p>Temperatura: {{ dia.temp }} Cº</p>
-      <p>Maxima: {{ dia.temp_max }} Cº</p>
-      <p>Minima: {{ dia.temp_min }} Cº</p>
-      <p>Viento: {{ dia.viento }} Km/h</p>
-      <p>Rafaga: {{ dia.rafaga }} Km/h</p>
+    <h1>Clima en los proximos dias</h1>
+    <section class="W-container_row">
+      <section
+        v-for="(dia, index) in filtroDatos"
+        :key="dia[index]"
+        class="W-border_item_card"
+      >
+        <h3>{{ dia.dia }}</h3>
+        <div class="W-row_card">
+          <img :src="dia.icon" alt="icono_clima" class="W-image_card" />
+          <p>Clima: {{ dia.clima }}</p>
+        </div>
+        <div class="W-row_card">
+          <img
+            src="../assets/temp_actual.svg"
+            alt="temperatura"
+            class="W-image_card"
+          />
+          <p>Temperatura: {{ dia.temp }} Cº</p>
+        </div>
+        <div class="W-row_card">
+          <img src="../assets/temp_max.svg" alt="maxima" class="W-image_card" />
+          <p>Maxima: {{ dia.temp_max }} Cº</p>
+        </div>
+        <div class="W-row_card">
+          <img src="../assets/temp_min.svg" alt="minima" class="W-image_card" />
+          <p>Minima: {{ dia.temp_min }} Cº</p>
+        </div>
+        <div class="W-row_card">
+          <img src="../assets/viento.svg" alt="viento" class="W-image_card" />
+          <p>Viento: {{ dia.viento }} Km/h</p>
+        </div>
+        <div class="W-row_card">
+          <img src="../assets/rafaga.svg" alt="rafaga" class="W-image_card" />
+          <p>Rafaga: {{ dia.rafaga }} Km/h</p>
+        </div>
+      </section>
     </section>
   </div>
 </template>
@@ -46,6 +73,7 @@ export default {
           for (let i = 0; i < datos.value.list.length; i++) {
             if (datos.value.list[i].dt_txt.includes("18:00:00")) {
               filtroDatos.value.push({
+                ciudad: datos.value.city.name,
                 clima: datos.value.list[i].weather[0].description,
                 dia: datos.value.list[i].dt_txt.substring(0, 10),
                 hora: datos.value.list[i].dt_txt.substring(11, 16),

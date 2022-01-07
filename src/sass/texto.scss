@@ -11,15 +11,10 @@ $texto:'Galdeano', sans-serif;
 
 h1 {
     width: auto;
-    height: 82px;
-    left: 493px;
-    top: 277px;
-
     font-family: $texto;
     font-style: normal;
     font-weight: bold;
     font-size: 70px;
-    line-height: 82px;
 
     color: #ffffff;
     text-align: center;
@@ -29,4 +24,14 @@ h2 {
     font-family: $texto;
     text-align: center;
     color: #ffffff;
+}
+h3{
+    font-family: $texto;
+    text-align: center;
+    color: #ffffff;
+}
+p{
+    text-align: left;
+    color: #ffffff;
+    font-family: $texto;
 }

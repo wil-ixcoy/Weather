@@ -1,0 +1,21 @@
+.W-image_card {
+    width: 35px;
+    height: 35px;
+    padding-right: 2px;
+}
+.W-row_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;   
+}
+.W-border_item_card {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: aliceblue;
+    background: rgba(174, 174, 174, 0.33);
+    border: 2px solid rgba(255, 255, 255, 0.47);
+    box-shadow: inset 0px 4px 4px #ffffff;
+    border-radius: 30px;
+}

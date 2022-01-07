@@ -3,6 +3,12 @@
     flex-direction: column;
     justify-content: space-around;
 }
+.W-container_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
 .W-subContainer {
     display: flex;
     justify-content: space-around;

@@ -51,12 +51,12 @@
 
       <article class="W-subContainer">
         <section class="W-item">
-          <img src="../assets/wind.svg" alt="viento" class="W-image" />
+          <img src="../assets/viento.svg" alt="viento" class="W-image" />
           <h2>Viento: {{ infoClima.viento }} km/h</h2>
         </section>
 
         <section class="W-item">
-          <img src="../assets/wind.svg" alt="rafaga" class="W-image" />
+          <img src="../assets/rafaga.svg" alt="rafaga" class="W-image" />
           <h2>Rafaga: {{ infoClima.rafaga }} km/h</h2>
         </section>
       </article>
