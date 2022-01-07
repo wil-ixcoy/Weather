@@ -14,8 +14,8 @@ $h1-240: 10px;
 $h2-1024: 25px;
 $h2-768: 18px;
 $h2-600: 10.8px;
-$h2-480: 8px;
-$h2-320: 5px;
+$h2-480: 12px;
+$h2-320: 8px;
 $h2-240: 3px;
 
 //variables para distintos tamaños en etiqueta h3
@@ -37,6 +37,9 @@ h1 {
     color: #ffffff;
     text-align: center;
     font-family: $texto;
+    margin-bottom:1rem;
+    margin-top:2rem;
+
 }
 h2 {
     font-size: $h2-1024;
@@ -63,6 +66,8 @@ p {
         color: #ffffff;
         text-align: center;
         font-family: $texto;
+        margin-bottom:1rem;
+        margin-top:1rem;
     }
     h2 {
         font-size: $h2-768;
@@ -89,6 +94,8 @@ p {
         color: #ffffff;
         text-align: center;
         font-family: $texto;
+        margin-bottom:1rem;
+        margin-top:1rem;
     }
     h2 {
         font-size: $h2-600;
@@ -115,6 +122,8 @@ p {
         color: #ffffff;
         text-align: center;
         font-family: $texto;
+        margin-bottom:1rem;
+        margin-top:1rem;
     }
     h2 {
         font-size: $h2-480;
@@ -141,6 +150,8 @@ p {
         color: #ffffff;
         text-align: center;
         font-family: $texto;
+        margin-bottom:1rem;
+        margin-top:1rem;
     }
     h2 {
         font-size: $h2-320;

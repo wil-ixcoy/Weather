@@ -22,24 +22,35 @@ $img-height-480: 50px;
 //320
 $item_with-320: 200px;
 $item_height-320: 60px;
-$img-width-320: 30px;
-$img-height-320: 30px;
+$img-width-320: 40px;
+$img-height-320: 40px;
 
 .W-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+//clase de pronostico.vue
 .W-container_row {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 3rem;
 }
+//clase de pronostico.vue
+.W-row_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
 .W-subContainer {
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .W-item {
     width: $item_with-1024;
@@ -50,6 +61,22 @@ $img-height-320: 30px;
     height: $img-height-1024;
     display: block;
     margin: auto;
+}
+
+//clase de pronostico.vue
+.W-border_item_card {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: aliceblue;
+    background: rgba(174, 174, 174, 0.33);
+    border: 2px solid rgba(255, 255, 255, 0.47);
+    box-shadow: inset 0px 4px 4px #ffffff;
+    border-radius: 30px;
+    margin-left: 0.5rem;
+}
+//clase de pronostico.vue
+.W-dia_correction{
+    font-style: bold;
 }
 
 @media (max-width: 1024px) {
@@ -63,8 +90,26 @@ $img-height-320: 30px;
         display: block;
         margin: auto;
     }
+    //clase de pronostico.vue
+    .W-container_row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 @media (max-width: 768px) {
+    //clase de pronostico.vue
+    .W-container_row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 3rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
     .W-item {
         width: $item_with-600;
         height: $item_height-600;
@@ -75,43 +120,85 @@ $img-height-320: 30px;
         display: block;
         margin: auto;
     }
+    //clase de pronostico.vue
+    .W-border_item_card {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+    //clase de pronostico.vue
+    .W-row_card {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.8rem;
+        padding-bottom: 0.2rem;
+        padding-right: 0.1rem;
+        padding-left: 0.1rem;
+    }
+    //clase de pronostico.vue
+    .W-dia_correction {
+        margin-left: 0.4rem;
+        text-align: left;
+        margin-top: 2.5rem;
+        margin-right: 1rem;
+    }
+    //clase de pronostico.vue
+    .W-border_item_card {
+        border-radius: 20px;
+    }
 }
 @media (max-width: 600px) {
-    .W-item{
+    .W-item {
         width: $item_with-480;
         height: $item_height-480;
     }
-    .W-image{
+    .W-image {
         width: $img-width-480;
         height: $img-height-480;
         display: block;
         margin: auto;
     }
+    //clase de pronostico.vue
+    .W-dia_correction {
+        margin-left: 0.5rem;
+        text-align: left;
+        margin-top: 2.5rem;
+    }
+    //clase de pronostico.vue
+    .W-row_card {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+    //clase de pronostico.vue
+    .W-border_item_card {
+        border-radius: 20px;
+    }
 }
 @media (max-width: 320px) {
-    .W-item{
+    .W-item {
         width: $item_with-320;
         height: $item_height-320;
     }
-    .W-image{
+    .W-image {
         width: $img-width-320;
         height: $img-height-320;
         display: block;
         margin: auto;
     }
+    //clase de pronostico.vue
+    .W-dia_correction {
+        margin-left: 0.1rem;
+        text-align: left;
+        margin-top: 1.5rem;
+    }
+    //clase de pronostico.vue
+    .W-row_card {
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+    //clase de pronostico.vue
+    .W-border_item_card {
+        border-radius: 15px;
+    }
 }
 
-/*
-@media (max-width: 1024px){
-
-}
-@media (max-width: 768px){
-
-}
-@media (max-width: 600px){
-
-}
-@media (max-width: 320px){
-
-}
-*/

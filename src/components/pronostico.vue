@@ -7,7 +7,7 @@
         :key="dia[index]"
         class="W-border_item_card"
       >
-        <h3>{{ dia.dia }}</h3>
+        <h3 class="W-dia_correction">{{ dia.dia }}</h3>
         <div class="W-row_card">
           <img :src="dia.icon" alt="icono_clima" class="W-image_card" />
           <p>Clima: {{ dia.clima }}</p>
