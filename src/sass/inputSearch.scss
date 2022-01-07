@@ -12,6 +12,10 @@ $input_image-portrait: 24px;
     box-shadow: 6px 5px 10px rgba(255, 255, 255, 0.67);
     border-radius: 25px;
 }
+.W-input:hover{
+    background: rgba(48, 0, 59, 0.877);
+    box-shadow: 6px 5px 10px rgba(255, 0, 221, 0.67);
+}
 .W-input_img {
     width: $input_image-landscape;
     height: $input_image-landscape;

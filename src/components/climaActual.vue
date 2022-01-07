@@ -10,12 +10,13 @@
           v-on:click.prevent="buscar"
         />
       </div>
+      <p class="W-error_texto">{{ errorCiudad }}</p>
     </section>
     <h1>{{ infoClima.name }} / {{ infoClima.country }}</h1>
     <section class="W-container">
       <article class="W-subContainer">
         <section class="W-item">
-          <img :src="infoClima.icon" alt="icon" class="W-image" />
+          <img :src="infoClima.icon" alt="icono-clima" class="W-image" />
           <h2>Clima: {{ infoClima.description }}</h2>
         </section>
       </article>
@@ -23,20 +24,19 @@
       <article class="W-subContainer">
         <section class="W-item">
           <img
-            src="../assets/temp_actual.svg"
-            alt="temperatura-actual"
-            class="W-image"
-          />
-          <h2>Temperatura: {{ infoClima.temp }}Cº</h2>
-        </section>
-
-        <section class="W-item">
-          <img
             src="../assets/temp_max.svg"
             alt="temperatura-max"
             class="W-image"
           />
           <h2>Temperatura maxima: {{ infoClima.temp_max }}Cº</h2>
+        </section>
+        <section class="W-item">
+          <img
+            src="../assets/temp_actual.svg"
+            alt="temperatura-actual"
+            class="W-image"
+          />
+          <h2>Temperatura: {{ infoClima.temp }}Cº</h2>
         </section>
 
         <section class="W-item">
@@ -72,10 +72,14 @@ export default {
   setup() {
     //variable que almacena el nombre  de ciudad
     let nombreCiudad = ref("");
+    //variable que obtiene el nombre de la ciudad con v-model
     let busqueda = ref("");
     //arreglo con datos de la api
     const infoClima = ref({});
+    //se muestra error en pantalla
+    let errorCiudad = ref("");
 
+    //funcion para buscar ciudad
     function buscar() {
       nombreCiudad.value = busqueda.value;
       return URL(nombreCiudad.value);
@@ -83,6 +87,7 @@ export default {
     URL(nombreCiudad.value);
     //funcion para obtener la informacion de la api
     function URL(data) {
+      errorCiudad.value = "";
       let ciudad = data === "" ? "Santa Cruz del Quiché" : data;
       axios
         .get(
@@ -104,8 +109,10 @@ export default {
           };
           console.log(infoClima.value);
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
+          infoClima.value = {};
+          errorCiudad.value =
+            "Verifique que el nombre de la ciudad este escrito de manera correcta";
         });
     }
 
@@ -115,6 +122,7 @@ export default {
       busqueda,
       infoClima,
       buscar,
+      errorCiudad,
     };
   },
 

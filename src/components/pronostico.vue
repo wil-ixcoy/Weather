@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Clima en los proximos dias</h1>
+    <p class="W-error_texto">{{ errorCiudad }}</p>
     <section class="W-container_row">
       <section
         v-for="(dia, index) in filtroDatos"
@@ -47,9 +48,13 @@ import { ref, watch } from "vue";
 export default {
   props: ["msg"],
   setup(props) {
+    //almacena todos los dato de la api
     let datos = ref([]);
+    //muestra error en pantalla
+    let errorCiudad = ref("");
+    //datos filtrados por el dia
     let filtroDatos = ref([]);
-    console.log(props);
+    //asignamos un origen por defecto
     let origen = ref("Santa Cruz del Quiché");
     pronosticoSemana(origen.value);
     watch(
@@ -61,6 +66,7 @@ export default {
     );
 
     function pronosticoSemana(data) {
+      errorCiudad.value = "";
       filtroDatos.value = [];
       let ciudad = data;
 
@@ -88,8 +94,9 @@ export default {
           }
         })
 
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
+          errorCiudad.value =
+            "Verifique que el nombre de la ciudad este escrito de manera correcta";
         });
     }
 
@@ -98,6 +105,7 @@ export default {
       datos,
       filtroDatos,
       origen,
+      errorCiudad,
     };
   },
 };
