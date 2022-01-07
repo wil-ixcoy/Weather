@@ -4,11 +4,11 @@
 $texto: "Galdeano", sans-serif;
 /*Variables para distintos tamaños en etiqueta h1*/
 $h1-1024: 70px;
-$h1-768: 50px;
-$h1-600: 30px;
-$h1-480: 20px;
-$h1-320: 10px;
-$h1-240: 5px;
+$h1-768: 60px;
+$h1-600: 40px;
+$h1-480: 30px;
+$h1-320: 20px;
+$h1-240: 10px;
 
 //Variables para distintos tamaños en etiqueta h2
 $h2-1024: 25px;
@@ -162,15 +162,3 @@ p {
     }
 }
 
-/*
-@media (max-width: 1024px) {
-}
-@media (max-width: 768px) {
-}
-@media (max-width: 600px) {
-}
-@media (max-width: 480px) {
-}
-@media (max-width: 320px) {
-}
-*/

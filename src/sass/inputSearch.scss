@@ -1,3 +1,7 @@
+//variables
+$input_image-landscape: 32px;
+$input_image-portrait: 24px;
+
 .W-input {
     margin: auto;
     width: 500px;
@@ -8,9 +12,9 @@
     box-shadow: 6px 5px 10px rgba(255, 255, 255, 0.67);
     border-radius: 25px;
 }
-.W-input_img{
-    width: 32px;
-    height: 32px;
+.W-input_img {
+    width: $input_image-landscape;
+    height: $input_image-landscape;
     padding-right: 1em;
     padding-top: 0.2em;
     cursor: pointer;
@@ -27,7 +31,55 @@ input {
     font-size: 18px;
 }
 
-input::-webkit-input-placeholder { 
-    color: #fff; 
+input::-webkit-input-placeholder {
+    color: #fff;
     font-size: 18px;
-} 
+}
+
+@media (max-width: 600px) {
+    .W-input {
+        margin: auto;
+        width: 300px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.42);
+        box-shadow: 6px 5px 10px rgba(255, 255, 255, 0.67);
+        border-radius: 25px;
+    }
+    .W-input_img {
+        width: $input_image-portrait;
+        height: $input_image-portrait;
+        padding-right: 1em;
+        padding-top: 0.2em;
+        cursor: pointer;
+    }
+    input {
+        font-size: 15px;
+    }
+
+    input::-webkit-input-placeholder {
+        color: #fff;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .W-input {
+        margin: auto;
+        width: 290px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.42);
+        box-shadow: 6px 5px 10px rgba(255, 255, 255, 0.67);
+        border-radius: 25px;
+    }
+    input {
+        font-size: 12px;
+    }
+    input::-webkit-input-placeholder {
+        color: #fff;
+        font-size: 12px;
+    }
+}
