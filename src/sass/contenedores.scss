@@ -1,0 +1,117 @@
+//variables
+//1024
+$item_with-1024: 320px;
+$item_height-1024: 150px;
+$img-width-1024: 100px;
+$img-height-1024: 100px;
+//768
+$item_with-768: 280px;
+$item_height-768: 120px;
+$img-width-768: 70px;
+$img-height-768: 70px;
+//600
+$item_with-600: 260px;
+$item_height-600: 100px;
+$img-width-600: 60px;
+$img-height-600: 60px;
+//480
+$item_with-480: 240px;
+$item_height-480: 80px;
+$img-width-480: 50px;
+$img-height-480: 50px;
+//320
+$item_with-320: 200px;
+$item_height-320: 60px;
+$img-width-320: 30px;
+$img-height-320: 30px;
+
+.W-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.W-container_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+.W-subContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.W-item {
+    width: $item_with-1024;
+    height: $item_height-1024;
+}
+.W-image {
+    width: $img-width-1024;
+    height: $img-height-1024;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 1024px) {
+    .W-item {
+        width: $item_with-768;
+        height: $item_height-768;
+    }
+    .W-image {
+        width: $img-width-768;
+        height: $img-height-768;
+        display: block;
+        margin: auto;
+    }
+}
+@media (max-width: 768px) {
+    .W-item {
+        width: $item_with-600;
+        height: $item_height-600;
+    }
+    .W-image {
+        width: $img-width-600;
+        height: $img-height-600;
+        display: block;
+        margin: auto;
+    }
+}
+@media (max-width: 600px) {
+    .W-item{
+        width: $item_with-480;
+        height: $item_height-480;
+    }
+    .W-image{
+        width: $img-width-480;
+        height: $img-height-480;
+        display: block;
+        margin: auto;
+    }
+}
+@media (max-width: 320px) {
+    .W-item{
+        width: $item_with-320;
+        height: $item_height-320;
+    }
+    .W-image{
+        width: $img-width-320;
+        height: $img-height-320;
+        display: block;
+        margin: auto;
+    }
+}
+
+/*
+@media (max-width: 1024px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 600px){
+
+}
+@media (max-width: 320px){
+
+}
+*/
