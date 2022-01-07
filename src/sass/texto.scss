@@ -1,37 +1,176 @@
-/*Variables para distintos tamaños*/
-$pc-1024: 70px;
-$pc-768: 50px;
-$pc-600: 30px;
-$pc-480: 20px;
-$pc-320: 10px;
-$pc-240: 5px;
-$texto:'Galdeano', sans-serif;
+//importaciones necesarias
+@import url("https://fonts.googleapis.com/css2?family=Galdeano&display=swap");
+//variables generales
+$texto: "Galdeano", sans-serif;
+/*Variables para distintos tamaños en etiqueta h1*/
+$h1-1024: 70px;
+$h1-768: 50px;
+$h1-600: 30px;
+$h1-480: 20px;
+$h1-320: 10px;
+$h1-240: 5px;
 
-@import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+//Variables para distintos tamaños en etiqueta h2
+$h2-1024: 25px;
+$h2-768: 18px;
+$h2-600: 10.8px;
+$h2-480: 8px;
+$h2-320: 5px;
+$h2-240: 3px;
+
+//variables para distintos tamaños en etiqueta h3
+$h3-1024: 20px;
+$h3-768: 15px;
+$h3-600: 10px;
+$h3-480: 7px;
+$h3-320: 4px;
+$h3-240: 2px;
+//variables para distintos tamaños en etiqueta p
+$p-1024: 16px;
+$p-768: 12px;
+$p-600: 8px;
+$p-480: 6px;
+$p-320: 4px;
 
 h1 {
-    width: auto;
-    font-family: $texto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 70px;
-
+    font-size: $h1-1024;
     color: #ffffff;
     text-align: center;
+    font-family: $texto;
 }
-
 h2 {
-    font-family: $texto;
-    text-align: center;
+    font-size: $h2-1024;
     color: #ffffff;
-}
-h3{
-    font-family: $texto;
     text-align: center;
-    color: #ffffff;
+    font-family: $texto;
 }
-p{
+h3 {
+    font-size: $h3-1024;
+    color: #ffffff;
+    text-align: center;
+    font-family: $texto;
+}
+p {
+    font-size: $p-1024;
+    color: #ffffff;
     text-align: left;
-    color: #ffffff;
     font-family: $texto;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: $h1-768;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h2 {
+        font-size: $h2-768;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h3 {
+        font-size: $h3-768;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    p {
+        font-size: $p-768;
+        color: #ffffff;
+        text-align: left;
+        font-family: $texto;
+    }
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: $h1-600;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h2 {
+        font-size: $h2-600;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h3 {
+        font-size: $h3-600;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    p {
+        font-size: $p-600;
+        color: #ffffff;
+        text-align: left;
+        font-family: $texto;
+    }
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: $h1-480;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h2 {
+        font-size: $h2-480;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h3 {
+        font-size: $h3-480;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    p {
+        font-size: $p-480;
+        color: #ffffff;
+        text-align: left;
+        font-family: $texto;
+    }
+}
+@media (max-width: 320px) {
+    h1 {
+        font-size: $h1-320;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h2 {
+        font-size: $h2-320;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    h3 {
+        font-size: $h3-320;
+        color: #ffffff;
+        text-align: center;
+        font-family: $texto;
+    }
+    p {
+        font-size: $p-320;
+        color: #ffffff;
+        text-align: left;
+        font-family: $texto;
+    }
+}
+
+/*
+@media (max-width: 1024px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 600px) {
+}
+@media (max-width: 480px) {
+}
+@media (max-width: 320px) {
+}
+*/
