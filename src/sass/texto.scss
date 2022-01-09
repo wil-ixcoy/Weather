@@ -59,6 +59,12 @@ p {
     text-align: left;
     font-family: $texto;
 }
+.creador{
+    font-size: $p-1024;
+    color: #ffffff;
+    text-align:center;
+    font-family: $texto;
+}
 .W-error_texto{
     color: #d47b7b;
     text-align: center;
@@ -92,6 +98,12 @@ p {
         text-align: left;
         font-family: $texto;
     }
+    .creador{
+        font-size: $p-768;
+        color: #ffffff;
+        text-align:center;
+        font-family: $texto;
+    }
 }
 @media (max-width: 600px) {
     h1 {
@@ -118,6 +130,12 @@ p {
         font-size: $p-600;
         color: #ffffff;
         text-align: left;
+        font-family: $texto;
+    }
+    .creador{
+        font-size: $p-600;
+        color: #ffffff;
+        text-align:center;
         font-family: $texto;
     }
 }
@@ -148,6 +166,12 @@ p {
         text-align: left;
         font-family: $texto;
     }
+    .creador{
+        font-size: $p-480;
+        color: #ffffff;
+        text-align:center;
+        font-family: $texto;
+    }
 }
 @media (max-width: 320px) {
     h1 {
@@ -174,6 +198,12 @@ p {
         font-size: $p-320;
         color: #ffffff;
         text-align: left;
+        font-family: $texto;
+    }
+    .creador{
+        font-size: $p-320;
+        color: #ffffff;
+        text-align:center;
         font-family: $texto;
     }
 }

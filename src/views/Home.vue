@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <clima-actual></clima-actual>
-    <p>Hecho por Wiliams Ixcoy, @wili_code</p>
+    <p class="creador">Hecho por Wiliams Ixcoy</p>
   </div>
 </template>
 

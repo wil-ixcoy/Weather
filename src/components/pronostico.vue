@@ -59,8 +59,7 @@ export default {
     pronosticoSemana(origen.value);
     watch(
       () => props.msg,
-      (newValue, oldValue) => {
-        console.log(oldValue, newValue);
+      (newValue) => {
         pronosticoSemana(newValue);
       }
     );

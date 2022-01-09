@@ -1,7 +1,12 @@
 <template>
   <div>
     <section class="">
-      <div class="W-input">
+      <div
+        class="W-input"
+        :class="{
+          input_active: busqueda.length > 0,
+        }"
+      >
         <input type="text" placeholder="Buscar Ciudad" v-model="busqueda" />
         <img
           src="../assets/busqueda.svg"
@@ -94,7 +99,6 @@ export default {
           `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=235cfdfa708afcdf68cf0dffcfb036d6&lang=es&units=metric`
         )
         .then((response) => {
-          console.log(response.data);
           //se agregan los datos al arreglo infoClima
           infoClima.value = {
             country: response.data.sys.country,
@@ -107,7 +111,6 @@ export default {
             rafaga: response.data.wind.gust,
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
           };
-          console.log(infoClima.value);
         })
         .catch(() => {
           infoClima.value = {};
