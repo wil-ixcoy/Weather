@@ -73,13 +73,16 @@ $img-height-320: 40px;
     box-shadow: inset 0px 4px 4px #ffffff;
     border-radius: 30px;
     margin-left: 0.5rem;
+    width: $item_with-1024;
+
 }
+
 //clase de pronostico.vue
 .W-dia_correction{
     font-style: bold;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px){
     .W-item {
         width: $item_with-768;
         height: $item_height-768;
@@ -98,6 +101,9 @@ $img-height-320: 40px;
         margin-bottom: 3rem;
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+    .W-border_item_card{
+        width: $item_with-768;
     }
 }
 @media (max-width: 768px) {
@@ -125,7 +131,9 @@ $img-height-320: 40px;
         display: flex;
         justify-content: space-around;
         margin-top: 1rem;
+        width: 100%;
     }
+    
     //clase de pronostico.vue
     .W-row_card {
         display: flex;
@@ -172,6 +180,7 @@ $img-height-320: 40px;
     //clase de pronostico.vue
     .W-border_item_card {
         border-radius: 20px;
+        width: 100%;
     }
 }
 @media (max-width: 320px) {
@@ -199,6 +208,7 @@ $img-height-320: 40px;
     //clase de pronostico.vue
     .W-border_item_card {
         border-radius: 15px;
+        width: 100%;
     }
 }
 

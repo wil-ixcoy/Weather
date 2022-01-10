@@ -7,8 +7,7 @@ $h1-1024: 70px;
 $h1-768: 60px;
 $h1-600: 40px;
 $h1-480: 30px;
-$h1-320: 20px;
-$h1-240: 10px;
+
 
 //Variables para distintos tamaños en etiqueta h2
 $h2-1024: 25px;
@@ -177,7 +176,7 @@ p {
         font-family: $texto;
     }
 }
-@media (min-width: 320px) {
+@media (max-width: 320px) {
     h1 {
         font-size: $h1-480;
         color: #ffffff;
