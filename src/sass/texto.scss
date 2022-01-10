@@ -15,22 +15,19 @@ $h2-1024: 25px;
 $h2-768: 18px;
 $h2-600: 10.8px;
 $h2-480: 12px;
-$h2-320: 8px;
-$h2-240: 3px;
+
 
 //variables para distintos tamaños en etiqueta h3
 $h3-1024: 20px;
 $h3-768: 15px;
 $h3-600: 10px;
 $h3-480: 7px;
-$h3-320: 4px;
-$h3-240: 2px;
 //variables para distintos tamaños en etiqueta p
 $p-1024: 16px;
 $p-768: 12px;
 $p-600: 8px;
 $p-480: 6px;
-$p-320: 4px;
+
 
 h1 {
     font-size: $h1-1024;
@@ -173,9 +170,9 @@ p {
         font-family: $texto;
     }
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) {
     h1 {
-        font-size: $h1-320;
+        font-size: $h1-480;
         color: #ffffff;
         text-align: center;
         font-family: $texto;
@@ -183,25 +180,25 @@ p {
         margin-top:1rem;
     }
     h2 {
-        font-size: $h2-320;
+        font-size: $h2-480;
         color: #ffffff;
         text-align: center;
         font-family: $texto;
     }
     h3 {
-        font-size: $h3-320;
+        font-size: $h3-480;
         color: #ffffff;
         text-align: center;
         font-family: $texto;
     }
     p {
-        font-size: $p-320;
+        font-size: $p-480;
         color: #ffffff;
         text-align: left;
         font-family: $texto;
     }
     .creador{
-        font-size: $p-320;
+        font-size: $p-1024;
         color: #ffffff;
         text-align:center;
         font-family: $texto;
