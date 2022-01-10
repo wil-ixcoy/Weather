@@ -106,7 +106,8 @@ $img-height-320: 40px;
         width: $item_with-768;
     }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 950px) {
     //clase de pronostico.vue
     .W-container_row {
         display: flex;
