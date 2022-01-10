@@ -1,7 +1,12 @@
 <template>
   <div>
     <h1>Clima en los proximos dias</h1>
-    <p class="W-error_texto">{{ errorCiudad }}</p>
+    <div v-if="filtroDatos.ciudad">
+      <p class="W-texto_guia">{{ errorCiudad }}</p>
+    </div>
+    <div v-else>
+      <p class="W-error_texto">{{ errorCiudad }}</p>
+    </div>
     <section class="W-container_row">
       <section
         v-for="(dia, index) in filtroDatos"

@@ -62,10 +62,17 @@ p {
     text-align:center;
     font-family: $texto;
 }
+.W-texto_guia{
+    font-size: $p-1024;
+    color: #ffffff;
+    text-align:center;
+    font-family: $texto;
+}
 .W-error_texto{
     color: #d47b7b;
     text-align: center;
     font-family: $texto;
+    font-size: $h3-1024;
 }
 
 @media (max-width: 768px) {

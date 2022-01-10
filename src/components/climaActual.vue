@@ -15,7 +15,12 @@
           v-on:click.prevent="buscar"
         />
       </div>
-      <p class="W-error_texto">{{ errorCiudad }}</p>
+      <div v-if="infoClima.name">
+        <p class="W-texto_guia">{{ errorCiudad }}</p>
+      </div>
+      <div v-else>
+        <p class="W-error_texto">{{ errorCiudad }}</p>
+      </div>
     </section>
     <h1>{{ infoClima.name }} / {{ infoClima.country }}</h1>
     <section class="W-container">
@@ -92,7 +97,8 @@ export default {
     URL(nombreCiudad.value);
     //funcion para obtener la informacion de la api
     function URL(data) {
-      errorCiudad.value = "";
+      errorCiudad.value =
+        "Presiona el icono de busqueda para buscar el clima de la Ciudad";
       let ciudad = data === "" ? "Santa Cruz del Quiché" : data;
       axios
         .get(
